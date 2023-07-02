@@ -17,18 +17,17 @@ async function main() {
   console.log('Account balance is ', accountBalance.toString())
 
 
-
   //Deploying contracts
   const contracts = await hre.ethers.getContractFactory('Counter')
   const contract = await contracts.deploy()
-  await contract.waitForDeployment()//Wait until the deployment process complete
+  await contract.deployed()//Wait until the deployment process complete
 
    //Logging the address of the deployed contract
-  console.log('Counter address ', await contract.getAddress())
+  console.log('Counter address ', await contract.address)
 
 
   //Get sender user addresss,well you know who deploy that is contract
-  const receipt = await contract.deploymentTransaction().wait(2)
+  const receipt = await contract.deployTransaction.wait()
   console.log('Deployed by address ', receipt.from)
 
 }
