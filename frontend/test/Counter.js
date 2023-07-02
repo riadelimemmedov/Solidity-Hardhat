@@ -9,7 +9,7 @@ describe('Counter', function() {
         // Deploy a new instance of the Counter contract before each test
         const contracts = await ethers.getContractFactory('Counter');
         contract = await contracts.deploy();
-        await contract.waitForDeployment(); // Wait until the deployment process completes
+        await contract.deployed(); // Wait until the deployment process completes
     });
 
     it('Should start with a count of 0', async function() {
