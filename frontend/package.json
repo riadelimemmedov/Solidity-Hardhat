@@ -31,6 +31,7 @@
   "scripts": {
     "compile": "npx hardhat compile",
     "deployhardhat": "npx hardhat run scripts/deploy.js --network sepolia",
+    "deploylocalhost": "npx hardhat run scripts/deploy.js --network localhost",
     "get-accounts": "npx hardhat node",
     "test": "npx hardhat test",
     "dev": "next dev",
